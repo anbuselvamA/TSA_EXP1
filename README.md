@@ -16,14 +16,40 @@ To Develop a python program to Plot a time series data (population/ market price
 ```
 import pandas as pd
 import matplotlib.pyplot as plt
-df = pd.read_csv('/content/student_performance.csv', index_col='Name', parse_dates=['Gender'])
 
-plt.figure(figsize=(12, 6))
-plt.plot(df.index, df.iloc[:, 0])
-plt.title('Students performance')
-plt.xlabel('FinalGrade')
-plt.ylabel('Number of student')
-plt.grid(True)
+
+data = {
+    'Date': pd.date_range(start='2023-01-01', periods=365, freq='D'),
+    'Scores': np.random.randint(50, 100, size=365)
+}
+df = pd.DataFrame(data)
+
+
+df.set_index('Date', inplace=True)
+
+
+monthly_mean = df.resample('M').mean()
+
+
+yearly_mean = df.resample('Y').mean()
+
+plt.figure(figsize=(10, 6))
+plt.plot(monthly_mean, label='Monthly Mean Scores', color='blue')
+plt.title('Monthly Mean Student Scores')
+plt.xlabel('Month')
+plt.ylabel('Scores')
+plt.legend()
+plt.show()
+
+
+plt.figure(figsize=(10, 6))
+plt.plot(yearly_mean, label='Yearly Mean Scores', color='green')
+plt.title('Yearly Mean Student Scores')
+plt.xlabel('Year')
+plt.ylabel('Scores')
+plt.legend()
+plt.show()
+
 
 ```
 
@@ -37,9 +63,11 @@ plt.grid(True)
 
 
 # OUTPUT:
+![image](https://github.com/user-attachments/assets/85b2002a-ff0c-46f9-80b9-aec46c2177e1)
 
 
-![image](https://github.com/user-attachments/assets/5dee34c3-5683-4841-9812-ca6fdabcc304)
+
+
 
 
 
