@@ -1,4 +1,4 @@
-###  Date: 24-08-2024
+
 ### DEVELOPER NAME: ANBUSELVAM.A
 ### REG NO:212222240009
 # Ex.No: 01A PLOT A TIME SERIES DATA
@@ -76,4 +76,4 @@ plt.show()
 
 
 # RESULT:
-The program have created the python code for plotting the time series of given data.
+The program have created the python program to Plot a time series data student mean scores.
