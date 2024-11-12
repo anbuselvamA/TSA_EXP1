@@ -21,7 +21,8 @@ data = {
     'Date': pd.date_range(start='2023-01-01', periods=365, freq='D'),
     'Scores': np.random.randint(50, 100, size=365)
 }
-df = pd.DataFrame(data)
+df = pd.read_csv('/content/student_performance.csv')
+
 
 
 df.set_index('Date', inplace=True)
